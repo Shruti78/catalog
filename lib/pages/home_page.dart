@@ -15,21 +15,26 @@ class Homepage extends StatefulWidget {
 class _HomepageState extends State<Homepage> {
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     loadData();
   }
 
   loadData() async {
-    var catalogJson = await rootBundle.loadString("assets/files/catalog.json");
-    var decodeddata = jsonDecode(catalogJson);
+    await Future.delayed(Duration(seconds: 3));
+    final catalogJson =
+        await rootBundle.loadString("assets/files/catalog.json");
+    final decodeddata = jsonDecode(catalogJson);
     var productsdata = decodeddata("products");
+    Catalogmodel.Items = List.from(productsdata)
+        .map<Item>((Item) => Item.fromMap(Item))
+        .toList(); // Will give list of items
+
+    setState(
+        () {}); // agar y ni karenge toh ek hi object ccall hoga we need to call all the items
   }
 
   @override
   Widget build(BuildContext context) {
-    // list generation k lie ek item num of times likhne k lie
-    final dummylist = List.generate(10, (index) => Catalogmodel.Items[0]);
     return Scaffold(
       appBar: AppBar(
         title: Center(
@@ -38,14 +43,18 @@ class _HomepageState extends State<Homepage> {
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
-        child: ListView.builder(
-          itemCount: dummylist.length,
-          itemBuilder: (context, index) {
-            return ItemWidget(
-              item: dummylist[index],
-            );
-          },
-        ),
+        child: (Catalogmodel.Items != Null && Catalogmodel.Items.isNotEmpty)
+            ? ListView.builder(
+                itemCount: Catalogmodel.Items.length,
+                itemBuilder: (context, index) {
+                  return ItemWidget(
+                    item: Catalogmodel.Items[index],
+                  );
+                },
+              )
+            : Center(
+                child: CircularProgressIndicator(),
+              ),
       ),
       drawer: MyDrawer(),
     );

@@ -1,7 +1,7 @@
-import 'package:flutter/material.dart';
+// ignore_for_file: non_constant_identifier_names
 
 class Catalogmodel {
-  static final Items = [
+  static List<Item> Items = [
     Item(
       id: 1,
       name: "iphone 12",
@@ -29,4 +29,24 @@ class Item {
       required this.price,
       required this.color,
       required this.image});
+
+  factory Item.fromMap(Map<String, dynamic> map) {
+    return Item(
+      id: map["id"], // way to decode
+      name: map["name"],
+      desc: map["desc"],
+      price: map["price"],
+      color: map["color"],
+      image: map["image"],
+    );
+  }
+  // gives us map
+  toMap() => {
+        "id": id,
+        "name": name,
+        "desc": desc,
+        " price": price,
+        "color": color,
+        " image": image,
+      }; // will match with backend part
 }
