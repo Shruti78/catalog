@@ -30,16 +30,15 @@ class Item {
       required this.color,
       required this.image});
 
-  factory Item.fromMap(Map<String, dynamic> map) {
-    return Item(
-      id: map["id"], // way to decode
-      name: map["name"],
-      desc: map["desc"],
-      price: map["price"],
-      color: map["color"],
-      image: map["image"],
-    );
-  }
+  factory Item.fromMap(Map<String, dynamic> map) => Item(
+        id: map["id"], // way to decode
+        name: map["name"],
+        desc: map["desc"],
+        price: map["price"],
+        color: map["color"],
+        image: map["image"],
+      );
+
   // gives us map
   toMap() => {
         "id": id,
