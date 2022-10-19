@@ -1,0 +1,67 @@
+{
+    "products" :[
+        {
+        "id": 1,
+      "name": "iphone 12",
+      "desc": "Apple Iphone 12 generation",
+      "price": 120000,
+      "color": "#33505a",
+      "image":
+          "https://cdn.pocket-lint.com/r/s/970x/assets/images/154302-phones-review-iphone-12-pro-review-product-shots-image3-wd487ybwpf.jpg"
+    
+        },
+        {
+            "id": 2,
+          "name": "iphone 10",
+          "desc": "Apple Iphone 10 generation",
+          "price": 150000,
+          "color": "#33505a",
+          "image":"data:image/png;base64,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"
+              
+        
+            },
+            {
+                "id": 3,
+              "name": "iphone 14",
+              "desc": "Apple Iphone 14 generation",
+              "price": 160000,
+              "color": "#33505a",
+              "image":"https://fdn.gsmarena.com/imgroot/news/22/07/apple-iphone-14-suppliers-diversified/inline/-1200w5/gsmarena_001.jpg"
+                },
+
+                {
+                    "id": 4,
+                  "name": "iphone 13",
+                  "desc": "Apple Iphone 13 generation",
+                  "price": 130000,
+                  "color": "#33505a",
+                  "image":"data:image/jpeg;base64,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"
+                    },
+            
+                    {
+                        "id": 5,
+                      "name": "ipad pro",
+                      "desc": "Apple Ipad 11 pro",
+                      "price": 220000,
+                      "color": "#33505a",
+                      "image":"https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/ipad-pro-11-select-wifi-silver-202104_GEO_IN_FMT_WHH?wid=940&hei=1112&fmt=p-jpg&qlt=95&.v=1617927139000"
+                        },
+                
+                        {
+                            "id": 6,
+                          "name": "ipad pro 12.9",
+                          "desc": "Apple Ipad pro 12.9",
+                          "price": 340000,
+                          "color": "#33505a",
+                          "image":"https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/ipad-pro-12-select-wifi-spacegray-202104_GEO_IN_FMT_WHH?wid=940&hei=1112&fmt=p-jpg&qlt=95&.v=1617923524000"
+                     },
+                     {
+                        "id": 7,
+                      "name": "iphone 8 ",
+                      "desc": "Apple Iphone 8 plus ",
+                      "price": 50000,
+                      "color": "#33505a",
+                      "image":"https://www.apple.com/newsroom/images/product/iphone/standard/iphone8_iphone8plus_product_red_front_back_041018_big.jpg.large.jpg"
+                 }
+    ]
+} 
